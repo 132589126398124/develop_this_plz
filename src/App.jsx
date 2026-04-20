@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { Save, Printer, Plus, Trash2, PenBox, Image as ImageIcon, FolderOpen, ChevronDown, ChevronUp, FileText } from 'lucide-react';
 import { filmDatabase } from './data/films';
+import { Analytics } from "@vercel/analytics/react";
 
 const FloatingInput = ({ label, value, onChange, type = "text", wrapperStyle, ...props }) => (
   <div className="floating-container" style={wrapperStyle}>
@@ -424,6 +425,7 @@ function App() {
 
   return (
     <div className="layout">
+      <Analytics />
       <CustomModal {...modalConfig} />
       
       {/* 엑스포트용 원본 소스 (화면 밖으로 숨김 처리) - A4 사이즈 794x1122 고정 */}
